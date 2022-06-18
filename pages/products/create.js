@@ -36,7 +36,9 @@ function Create() {
   return (
     <>
       <div>
-        <h1>Crear nuevo producto</h1>
+        <h1>
+          <u>Crear nuevo producto</u>
+        </h1>
         <form>
           <input
             type='text'
