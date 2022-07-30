@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState } from "react"
 
-const initialState = { name: '', price: 0 }
+const initialState = { name: "", price: 0 }
 function Create() {
   const [product, setProduct] = useState(initialState)
 
@@ -17,16 +17,16 @@ function Create() {
     e.preventDefault()
 
     fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/products`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(product),
     })
       .then((res) => res.json())
       .then((data) => {
         setProduct(initialState)
-        console.log('Producto creado con éxito')
+        console.log("Producto creado con éxito")
       })
       .catch((err) => {
         console.log({ err })
@@ -41,14 +41,14 @@ function Create() {
         </h1>
         <form>
           <input
-            type='text'
-            name='name'
+            type="text"
+            name="name"
             value={product.name}
             onChange={handleChange}
           />
           <input
-            type='number'
-            name='price'
+            type="number"
+            name="price"
             value={product.price}
             onChange={handleChange}
           />
